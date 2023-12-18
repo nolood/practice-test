@@ -1,2 +1,8 @@
-nav 
-  p test
+link(rel="stylesheet", href=require("./navbar.scss"))
+
+
+section.section
+  .container-lg 
+    nav.navbar 
+      img(src=require("~/app/images/logo.svg"), alt="logo")
+      include ../../features/burger-menu/burger-menu.pug

@@ -1,0 +1,56 @@
+@import "~/app/styles/variables.scss";
+
+.header-title {
+  width: 650px;
+  margin-bottom: 32px;
+  font-family: "Gilroy-Bold", sans-serif;
+  font-size: 64px;
+  line-height: 74px;
+  letter-spacing: 2.56px;
+  color: $blue-01;
+}
+
+.header-description {
+  width: 420px;
+  font-family: "Gilroy-Medium", sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.8px;
+  color: $blue-01;
+  opacity: 0.6;
+}
+
+.header-section {
+  position: relative;
+  padding: 100px 0 190px 0;
+}
+
+.header-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    #98c3e8 8.84%,
+    rgba(152, 195, 232, 0) 31.12%
+  );
+  opacity: 0.2;
+}
+
+.header-btn {
+  margin-top: 70px;
+}
+
+.header-img {
+  position: absolute;
+  top: -100px;
+  right: -150px;
+  width: 687px;
+  height: 620px;
+}
+
+.header-container {
+  position: relative;
+}

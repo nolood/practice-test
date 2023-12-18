@@ -1,0 +1,14 @@
+@import "~/app/styles/variables.scss";
+
+.btn {
+  padding: 15px 48px;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.64px;
+  color: #fff;
+  background-color: $blue-04;
+  box-shadow: 5px 10px 20px 0px rgba(53, 110, 173, 0.2);
+}
