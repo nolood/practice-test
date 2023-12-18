@@ -1,0 +1,70 @@
+@import "~/app/styles/variables.scss";
+
+@mixin border($pos1, $pos2, $pos3, $pos4, $vis1, $vis2) {
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: #fff;
+    #{$pos1}: 0;
+    #{$pos2}: 0;
+    @if ($vis1 == true) {
+      display: none;
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background-color: #fff;
+    #{$pos3}: 0;
+    #{$pos4}: 0;
+    @if ($vis2 == true) {
+      display: none;
+    }
+  }
+}
+
+.clients-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clients-card__1,
+.clients-card__2,
+.clients-card__3 {
+  @include border(top, right, bottom, left, false, false);
+}
+
+.clients-card__4 {
+  @include border(top, left, bottom, left, false, false);
+}
+
+.clients-card__5,
+.clients-card__6,
+.clients-card__7 {
+  @include border(top, right, top, left, false, true);
+}
+
+.clients-card__8 {
+  background-color: $blue-01-02;
+  a {
+    text-transform: none;
+  }
+}
+
+.clients-card__link {
+  padding: 38px;
+  font-family: "Gilroy-Bold", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 46px;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+}

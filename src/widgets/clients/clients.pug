@@ -1,0 +1,13 @@
+include ../../features/clients-card/clients-card.pug
+link(rel="stylesheet", href=require("./clients.scss"))
+
+
+section.section.clients-wrapper 
+  .container 
+    div.clients-header
+      h4.clients-header__title Our Beloved Client
+      p.clients-header__description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+    ul.clients-list
+      - for (var i = 1; i <= 7; i++)
+        +clientsCard("Logo client " + i)(class="clients-card__" + i)
+      +clientsCard("More Client")(class="clients-card__8")

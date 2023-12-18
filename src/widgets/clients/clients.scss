@@ -1,0 +1,39 @@
+@import "~/app/styles/variables.scss";
+
+.clients-header {
+  display: flex;
+  gap: 100px;
+  margin-bottom: 125px;
+}
+
+.clients-header__title {
+  min-width: 250px;
+  font-family: "Gilroy-Bold", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 46px;
+  letter-spacing: 1.8px;
+  color: #fff;
+}
+
+.clients-wrapper {
+  padding: 100px 0;
+  border-top-left-radius: 200px;
+  background-color: $blue-04;
+}
+
+.clients-header__description {
+  padding-right: 60px;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.8px;
+  opacity: 0.6;
+  color: #fff;
+}
+
+.clients-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  height: 256px;
+}

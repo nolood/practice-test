@@ -5,11 +5,12 @@
   flex-direction: column;
   gap: 4px;
   width: 24px;
+  height: max-content;
   border: none;
   background: transparent;
   & > div {
     width: 100%;
-    height: 2px;
+    min-height: 2px !important;
     background-color: $blue-03;
   }
 }
