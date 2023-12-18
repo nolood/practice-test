@@ -1,19 +1,30 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin")
-const PugPlugin = require('pug-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const PugPlugin = require("pug-plugin");
 module.exports = (env) => {
   return {
     mode: env.mode || "development",
-    entry: path.resolve(__dirname, "src", "index.js"),
+    entry: {
+      index: path.resolve(__dirname, "src", "pages", "index.pug"),
+    },
     output: {
       path: path.resolve(__dirname, "dist"),
       filename: "[name].[contenthash].js",
       clean: true,
     },
+    resolve: {
+      alias: {
+        "~": path.resolve(__dirname, "src"),
+      },
+    },
     plugins: [
-      new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, "src", "views", "index.pug"),
-        filename: 'index.html',
+      new PugPlugin({
+        js: {
+          filename: "[name].[contenthash].js",
+        },
+        css: {
+          filename: "styles/[name].[contenthash].css",
+        },
       }),
     ],
     optimization: {
@@ -21,60 +32,31 @@ module.exports = (env) => {
     },
     devServer: {
       static: {
-        directory: path.join(__dirname, 'dist')
+        directory: path.join(__dirname, "dist"),
       },
       watchFiles: {
-        paths: ['src/**/*.*', 'assets/scss/**/*.*'],
+        paths: ["src/**/*.*", "assets/scss/**/*.*"],
         options: {
-          usePolling: true
-        }
-      }
+          usePolling: true,
+        },
+      },
     },
     module: {
       rules: [
         {
           test: /\.pug$/,
-          loader: PugPlugin.loader
+          loader: PugPlugin.loader,
         },
         {
-          test: /\.(woff|woff2|eot|ttf|otf)$/i,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                outputPath: 'fonts',
-              },
-            },
-          ],
-        },
-        {
-          test: /\.(png|jpe?g|gif)$/i,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                outputPath: 'images',
-              },
-            },
-          ],
-        },
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env'],
-            },
+          test: /\.(png|jpg|jpeg|ico|svg)/,
+          type: "asset/resource",
+          generator: {
+            filename: "assets/img/[name].[hash:8][ext]",
           },
         },
         {
-          test: /\.(s[ca]ss|css)$/,
-          use: [
-            'style-loader',
-            'css-loader',
-            'sass-loader',
-          ],
+          test: /\.(css|sass|scss)$/,
+          use: ["css-loader", "sass-loader"],
         },
       ],
     },

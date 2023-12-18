@@ -1,5 +1,1 @@
-import { pug } from './scripts/test'
-
-console.log('test')
-
-pug()
+console.log("test");
