@@ -1,0 +1,122 @@
+@import "~/app/styles/variables.scss";
+
+.footer-wrapper {
+  padding-bottom: 64px;
+  background-color: $blue-01;
+  border-top-right-radius: 200px;
+  transform: translateX(-100px);
+}
+
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 90px 0;
+}
+
+.footer-title {
+  max-width: 420px;
+  margin-bottom: 32px;
+  font-family: "Gilroy-Bold", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 46px;
+  letter-spacing: 1.8px;
+  color: #fff;
+}
+
+.footer-description {
+  max-width: 440px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0.8px;
+  color: #fff;
+  opacity: 0.6;
+}
+
+.footer-container {
+  transform: translateX(100px);
+}
+
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  opacity: 0.4;
+  transform: translateX(-312px);
+}
+
+.footer-info__item {
+  display: flex;
+  align-items: start;
+  gap: 15px;
+}
+
+.footer-info__title {
+  font-family: "Gilroy-Bold", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 46px;
+  letter-spacing: 0.56px;
+  color: #fff;
+}
+
+.footer-bottom {
+  display: flex;
+  padding-top: 90px;
+  gap: 100px;
+}
+
+.footer-info__prefix {
+  font-family: "Gilroy-Bold", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: 0.8px;
+  color: #fff;
+}
+
+.footer-info__text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0.8px;
+  color: #fff;
+}
+
+a.footer-info__text {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 300px;
+}
+
+.footer-list__title {
+  font-family: "Gilroy-Bold", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.footer-copyright {
+  margin-top: 64px;
+  font-family: "Gilroy-Bold", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0.8px;
+  color: #fff;
+  opacity: 0.4;
+}

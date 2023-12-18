@@ -1,3 +1,5 @@
+@import "~/app/styles/variables.scss";
+
 @font-face {
   font-family: "Gilroy-Bold";
   src: url("../fonts//Gilroy-Bold.ttf") format("ttf");
@@ -37,4 +39,8 @@ ul {
   max-width: 980px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+footer {
+  background-color: $blue-04;
 }

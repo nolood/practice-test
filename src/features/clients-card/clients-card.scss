@@ -41,7 +41,7 @@
 }
 
 .clients-card__4 {
-  @include border(top, left, bottom, left, false, false);
+  @include border(top, left, bottom, left, true, false);
 }
 
 .clients-card__5,

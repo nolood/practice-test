@@ -1,3 +1,5 @@
+
+
 html(lang="ru")
     head
         meta(charset="UTF-8")
@@ -7,6 +9,8 @@ html(lang="ru")
         title Afrianska
     body
         include ../shared/ui/button/button.pug
+        include ../widgets/footer/footer.pug
+
         header 
             include ../widgets/navbar/navbar.pug
             include ../widgets/header/header.pug
@@ -14,4 +18,4 @@ html(lang="ru")
             include ../widgets/services/services.pug
             include ../widgets/clients/clients.pug
         footer
-            
+            +footer()
