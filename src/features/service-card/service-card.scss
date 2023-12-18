@@ -1,0 +1,47 @@
+@import "~/app/styles/variables.scss";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+  height: 525px;
+  padding: 48px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 5px 20px 50px 0px rgba(16, 112, 177, 0.2);
+}
+
+.card-image {
+  max-width: fit-content;
+  align-self: center;
+}
+
+.card-title {
+  margin: 50px 0 16px 0;
+  font-family: "Gilroy-Bold", sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 1px;
+  color: $blue-01;
+}
+
+.card-description {
+  margin-bottom: 32px;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.8px;
+  color: $blue-01;
+}
+
+.card-controls {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 24px;
+  text-decoration: none;
+  & > span {
+    font-family: "Gilroy-Bold", sans-serif;
+    color: $blue-04;
+    font-weight: 600;
+  }
+}
