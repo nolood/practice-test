@@ -13,4 +13,9 @@
     min-height: 2px !important;
     background-color: $blue-03;
   }
+
+  p {
+    opacity: 0;
+    position: absolute;
+  }
 }
