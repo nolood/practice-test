@@ -6,11 +6,15 @@ mixin input(id, label, placeholder, inputType, textarea)
       span.label-title= label
       if textarea
         textarea(id=id, cols="30", rows="10" placeholder=placeholder).input
+        span.input-error This field is required
       else 
         input(type=inputType id=id placeholder=placeholder).input
+        span.input-error This field is required
   else 
       if textarea
         textarea(id=id, cols="30", rows="10" placeholder=placeholder).input
+        span.input-error This field is required
       else 
         input(type=inputType id=id placeholder=placeholder).input
+        span.input-error This field is required
     

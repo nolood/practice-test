@@ -26,6 +26,16 @@
   &:focus {
     outline: 1px solid $blue-03;
   }
+
+  &.required + .input-error {
+    display: block;
+  }
+}
+
+.input-error {
+  display: none;
+  font-size: 12px;
+  color: rgb(238, 76, 76);
 }
 
 .label {

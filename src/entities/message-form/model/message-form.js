@@ -1,7 +1,8 @@
 export class MessageForm {
-  constructor(formSelector) {
+  constructor(formSelector, onSubmit) {
     this.form = document.querySelector(formSelector);
     this.inputs = this.form.querySelectorAll(".input");
+    this.onSubmit = onSubmit;
   }
 
   validateNotEmpty(input) {
@@ -20,6 +21,14 @@ export class MessageForm {
     this.inputs.forEach((input) => {
       this.handleInputChange(input);
     });
+
+    const isAnyInputRequired = Array.from(this.inputs).some((input) =>
+      input.classList.contains("required")
+    );
+
+    if (!isAnyInputRequired) {
+      this.onSubmit();
+    }
   }
 
   init() {
@@ -28,6 +37,9 @@ export class MessageForm {
         this.handleInputChange(input);
       });
     });
-    this.form.addEventListener("submit", this.validate.bind(this));
+    this.form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      this.validate();
+    });
   }
 }

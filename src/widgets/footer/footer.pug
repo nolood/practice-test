@@ -3,6 +3,8 @@ link(rel="stylesheet", href=require("./footer.scss"))
 mixin footer()
   +modal("modal", "modal-content", "close-modal", "send us message")
     include ../../entities/message-form/message-form.pug 
+  +modal("second-modal", "second-modal-content", "second-close-modal", "Completed")
+  
   section.section.footer-wrapper&attributes(attributes) 
     .container.footer-container
       div.footer-top 

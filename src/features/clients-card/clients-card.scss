@@ -40,6 +40,12 @@
   @include border(top, right, bottom, left, false, false);
 }
 
+.clients-card__2 {
+  @media (max-width: 980px) {
+    @include border(bottom, left, bottom, left, true, false);
+  }
+}
+
 .clients-card__4 {
   @include border(top, left, bottom, left, true, false);
 }
@@ -50,10 +56,65 @@
   @include border(top, right, top, left, false, true);
 }
 
+.clients-card__7 {
+  @media (max-width: 980px) {
+    @include border(top, right, top, left, false, false);
+  }
+}
+
+.clients-card__6 {
+  @media (max-width: 980px) {
+    @include border(top, left, bottom, right, true, false);
+    &::before {
+      display: block;
+      top: 100%;
+    }
+  }
+}
+
+.clients-card__5 {
+  @media (max-width: 980px) {
+    @include border(bottom, right, bottom, left, false, false);
+    &::before {
+      display: block;
+      top: 100%;
+    }
+  }
+}
+
 .clients-card__8 {
   background-color: $blue-01-02;
   a {
     text-transform: none;
+  }
+  @media (max-width: 980px) {
+    &::after,
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.clients-card__1,
+.clients-card__2,
+.clients-card__3,
+.clients-card__4,
+.clients-card__5,
+.clients-card__6,
+.clients-card__7,
+.clients-card__8 {
+  @include border(top, right, top, left, true, false);
+  &::before {
+    display: block;
+  }
+}
+
+.clients-card__1 {
+  @media (max-width: 520px) {
+    &::before,
+    &::after {
+      display: none;
+    }
   }
 }
 

@@ -12,15 +12,22 @@ export class Modal {
   }
 
   close() {
-    console.log("kek");
     this.modal.classList.remove("modal-show");
-    document.body.style.overflow = "auto";
+    const activeModal = document.querySelector(".modal-show");
+    if (!activeModal) {
+      document.body.style.overflow = "auto";
+    }
   }
 
   init() {
-    this.modal.addEventListener("click", this.close.bind(this));
-    this.openButton.addEventListener("click", this.open.bind(this));
-    this.closeSelector.addEventListener("click", this.close.bind(this));
-    this.content.addEventListener("click", (event) => event.stopPropagation());
+    if (this.modal) this.modal.addEventListener("click", this.close.bind(this));
+    if (this.openButton)
+      this.openButton.addEventListener("click", this.open.bind(this));
+    if (this.closeSelector)
+      this.closeSelector.addEventListener("click", this.close.bind(this));
+    if (this.content)
+      this.content.addEventListener("click", (event) =>
+        event.stopPropagation()
+      );
   }
 }

@@ -9,6 +9,14 @@ const modal = new Modal(
 );
 modal.init();
 
-const messageForm = new MessageForm("#message-form");
+const secondModal = new Modal(
+  "#second-modal",
+  "#close-second-modal",
+  "#second-modal-content"
+);
+
+secondModal.init();
+
+const messageForm = new MessageForm("#message-form", () => secondModal.open());
 
 messageForm.init();
