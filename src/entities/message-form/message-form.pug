@@ -1,0 +1,7 @@
+link(rel="stylesheet", href=require("./message-form.scss"))
+
+form(id="message-form")
+  +input("name", "Full name", "Your name", "text")
+  +input("email", "Email", "Your email", "email")
+  +input("message", "Message", "Your message", "text",true)
+  +button("SUBMIT")(type="submit")

@@ -1,4 +1,13 @@
 
-.modal-wrapper 
-  .modal-content
-    
+link(rel="stylesheet", href=require("./modal.scss"))
+
+mixin modal(wrapper, content, close, title) 
+  .modal-wrapper(id=wrapper) 
+    .modal-content(id=content)
+      .modal-header
+        h6.modal-title= title
+        button.modal-close(id=close)
+      if block 
+        block 
+      else 
+        p Oops...

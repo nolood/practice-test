@@ -1,13 +1,15 @@
 link(rel="stylesheet", href=require("./footer.scss"))
 
 mixin footer()
+  +modal("modal", "modal-content", "close-modal", "send us message")
+    include ../../entities/message-form/message-form.pug 
   section.section.footer-wrapper&attributes(attributes) 
     .container.footer-container
       div.footer-top 
         div 
           h2.footer-title Interested to work with our team?
           p.footer-description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-        +button('Let’s Talk')
+        +button('Let’s Talk')(id="open-modal")
     div.footer-divider
     .container.footer-container
       div.footer-bottom 
