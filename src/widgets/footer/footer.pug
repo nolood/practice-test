@@ -1,0 +1,38 @@
+link(rel="stylesheet", href=require("./footer.scss"))
+
+mixin footer()
+  +modal("modal", "modal-content", "close-modal", "send us message")
+    include ../../entities/message-form/message-form.pug 
+  +modal("second-modal", "second-modal-content", "second-close-modal", "Completed")
+  
+  section.section.footer-wrapper&attributes(attributes) 
+    .container.footer-container
+      div.footer-top 
+        div 
+          h2.footer-title Interested to work with our team?
+          p.footer-description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+        +button('Let’s Talk')(id="open-modal")
+    div.footer-divider
+    .container.footer-container
+      div.footer-bottom 
+        ul.footer-list 
+          li.footer-info__item 
+            img(src=require("~/app/images/logo-secondary.svg"), alt="")
+            p.footer-info__title Afrianska
+          each value, key in { "A.": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.", "T.": "+62-812-7313-4321", "E.": "hello.afrian@gmail.com" }
+            li.footer-info__item  
+              span.footer-info__prefix= key
+              p.footer-info__text= value
+        ul.footer-list
+          li 
+            p.footer-list__title Afrianska
+          each value, key in { "About": "#1", "What we Do": "#2", "Project": "#3", "How It Work With Us": "#4" }
+            li.footer-info__item  
+              a(href=value).footer-info__text= key
+        ul.footer-list
+          li
+            p.footer-list__title Afrianska
+          each value, key in { "Instagram": "#5", "Facebook": "#6", "Linkedin": "#7", "Youtube": "#8" }
+            li.footer-info__item  
+              a(href=value).footer-info__text= key
+      p.footer-copyright 2019 © Afrianska. All rights reserved.          

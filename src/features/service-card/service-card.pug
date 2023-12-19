@@ -1,0 +1,10 @@
+link(rel="stylesheet", href=require("./service-card.scss"))
+
+mixin serviceCard(image, title, description)
+  li.card&attributes(attributes)
+    img(src=require(image) alt="Картинка карточки").card-image
+    h5.card-title=title
+    p.card-description=description 
+    a(href="#").card-controls
+      span Learn more
+      img(src=require("~/app/images/arrow.svg"), alt="Стрелочка")

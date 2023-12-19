@@ -27,9 +27,9 @@ module.exports = (env) => {
         },
       }),
     ],
-    optimization: {
-      minimize: true,
-    },
+    // optimization: {
+    //   minimize: true,
+    // },
     devServer: {
       static: {
         directory: path.join(__dirname, "dist"),
@@ -57,6 +57,13 @@ module.exports = (env) => {
         {
           test: /\.(css|sass|scss)$/,
           use: ["css-loader", "sass-loader"],
+        },
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/i,
+          type: "asset/resource",
+          generator: {
+            filename: "assets/fonts/[name][ext][query]",
+          },
         },
       ],
     },
