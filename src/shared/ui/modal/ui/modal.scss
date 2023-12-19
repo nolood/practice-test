@@ -25,6 +25,10 @@
   min-width: 500px;
   background-color: #fff;
   border-radius: 10px;
+  @media (max-width: 540px) {
+    padding: 20px;
+    min-width: 300px;
+  }
 }
 
 .modal-title {
@@ -67,5 +71,10 @@
   }
   &:after {
     transform: rotate(-45deg);
+  }
+
+  @media (max-width: 540px) {
+    right: 20px;
+    top: 22px;
   }
 }

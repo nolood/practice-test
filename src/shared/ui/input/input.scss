@@ -30,6 +30,10 @@
   &.required + .input-error {
     display: block;
   }
+
+  @media (max-width: 540px) {
+    padding: 10px;
+  }
 }
 
 .input-error {
